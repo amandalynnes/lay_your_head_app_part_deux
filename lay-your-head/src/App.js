@@ -1,10 +1,12 @@
 import React from 'react';
+import {NotFound} from "./pages/NotFound"
+import {Navbar} from "./components/Navbar"
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Lay Your Head</h1>
+      <Navbar />
     </div>
   );
 }
