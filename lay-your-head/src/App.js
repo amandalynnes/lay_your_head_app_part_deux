@@ -1,7 +1,7 @@
 import React from 'react';
 import {NotFound} from "./pages/NotFound"
 import {Navbar} from "./components/Navbar"
-import './App.css';
+import './HomePage.css';
 import Registration from './pages/Registration';
 
 function App() {
