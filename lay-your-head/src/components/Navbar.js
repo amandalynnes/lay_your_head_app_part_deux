@@ -1,29 +1,33 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import {  Menu } from "antd"
+import { Menu, Layout } from "antd"
 import {
     Switch,
     Route,
-    Link
-  } from "react-router-dom";
-  import {NotFound} from "../pages/NotFound"
+} from "react-router-dom";
+import { NotFound } from "../pages/NotFound"
 import "./Navbar.css"
-
-const Home =()=> <h1>home</h1>
+const {Header} =Layout
+const Home = () => <h1>home</h1>
 export const Navbar = () => {
     return (
-        <> 
-         <nav>  
-             <ul>   
-                 <NavLink to="/">Home</NavLink>
-                 <NavLink to="/something">NotFound</NavLink>
-             </ul>
-         </nav>
-        <Switch>    
-            <Route component={Home} exact path="/" />
-            <Route component={NotFound} path="*" />
-        </Switch>
-       </>     
+        <>
+            <Menu  mode="horizontal">
+            <Menu.Item>
+                <h1>Lay Your Head</h1>
+                </Menu.Item>
+                <Menu.Item>
+                    <NavLink to="/">Home</NavLink>
+                </Menu.Item>
+                <Menu.Item>
+                    <NavLink to="/something">NotFound</NavLink>
+                </Menu.Item>
+            </Menu>
+            <Switch>
+                <Route component={Home} exact path="/" />
+                <Route component={NotFound} path="*" />
+            </Switch>
+        </>
     )
 }
 
