@@ -13,12 +13,15 @@ const Home = () => <h1>home</h1>
 export const Navbar = () => {
     return (
         <>
+        <Image width={100} height={100} src={Logo}></Image>
             <Menu  mode="horizontal">
             <Menu.Item>
-                <h1>Lay Your Head</h1>
                 </Menu.Item>
                 <Menu.Item>
                     <NavLink to="/">Home</NavLink>
+                </Menu.Item>
+                <Menu.Item>
+                    <NavLink to="/login">Log In!</NavLink>
                 </Menu.Item>
                 <Menu.Item>
                     <NavLink to="/register">Registration</NavLink>
