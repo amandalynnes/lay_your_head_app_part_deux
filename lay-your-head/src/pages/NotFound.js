@@ -1,6 +1,5 @@
 import React from "react"
 import "./NotFound.css"
-import { Navbar } from "../components/Navbar"
 export const NotFound = () => {
     return (
         <>
