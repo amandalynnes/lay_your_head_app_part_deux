@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../src/App.css';
 import 'antd/dist/antd.css';
-import { Input, Space, Button, Image } from 'antd';
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { Image } from 'antd';
 import RegistrationForm from '../components/RegistrationForm';
 
 
