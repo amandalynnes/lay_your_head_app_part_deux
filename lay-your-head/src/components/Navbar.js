@@ -6,6 +6,7 @@ import {
     Route,
 } from "react-router-dom";
 import { NotFound } from "../pages/NotFound"
+import Login from "../pages/login/Login"
 import Registration from "../pages/Registration"
 import "./Navbar.css"
 import Logo from '../logo.png';
@@ -19,11 +20,12 @@ export const Navbar = () => {
         <Image width={100} height={100} src={Logo}></Image>
             <Menu  mode="horizontal">
             <Menu.Item>
-                
-                {/* <h1>Lay Your Head</h1> */}
                 </Menu.Item>
                 <Menu.Item>
                     <NavLink to="/">Home</NavLink>
+                </Menu.Item>
+                <Menu.Item>
+                    <NavLink to="/login">Log In!</NavLink>
                 </Menu.Item>
                 <Menu.Item>
                     <NavLink to="/register">Registration</NavLink>
@@ -35,6 +37,7 @@ export const Navbar = () => {
             <Switch>
                 <Route component={Home} exact path="/" />
                 <Route component={Registration} path="/register" />
+                <Route component={Login} path="/login" />
                 <Route component={NotFound} path="*" />
             </Switch>
         </>
