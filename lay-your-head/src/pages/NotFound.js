@@ -1,5 +1,8 @@
 import React from "react"
 import "./NotFound.css"
+import 'antd/dist/antd.css';
+
+
 export const NotFound = () => {
     return (
         <>

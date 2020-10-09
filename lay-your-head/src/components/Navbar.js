@@ -14,7 +14,7 @@ const Home = () => <h1>home</h1>
 export const Navbar = () => {
     return (
         <>
-        <Image width={100} height={100} src={Logo}></Image>
+        <Image width={150} height={150} src={Logo}></Image>
             <Menu  mode="horizontal">
             <Menu.Item>
                 </Menu.Item>
@@ -31,12 +31,16 @@ export const Navbar = () => {
                     <NavLink to="/something">NotFound</NavLink>
                 </Menu.Item>
             </Menu>
+            <Image width={1450} height={250} 
+             src="https://www.artech.com/wp-content/uploads/2018/08/iStock-668218790_Community-Building-web.jpg"/>
+            
             <Switch>
                 <Route component={Home} exact path="/" />
                 <Route component={Registration} path="/register" />
                 <Route component={Login} path="/login" />
                 <Route component={NotFound} path="*" />
             </Switch>
+            
         </>
     )
 }
