@@ -14,7 +14,7 @@ const Home = () => <h1>home</h1>
 export const Navbar = () => {
     return (
         <>
-        <Image width={100} height={100} src={Logo}></Image>
+        <Image width={150} height={150} src={Logo}></Image>
             <Menu  mode="horizontal">
             <Menu.Item>
                 </Menu.Item>
