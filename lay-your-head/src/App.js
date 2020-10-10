@@ -1,10 +1,9 @@
 import React from "react";
-import { NotFound } from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
 import "./App.css";
-import Registration from "./pages/Registration";
-
+import firebase from "firebase"
 function App() {
+  const firebaseApp = firebase.apps[0];
   return (
     // <>
     //   {/* <div className="App">
@@ -14,6 +13,7 @@ function App() {
     // </>
     <div className="App">
       <Navbar />
+
     </div>
   );
 }
