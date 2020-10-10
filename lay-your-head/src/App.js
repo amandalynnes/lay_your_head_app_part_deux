@@ -1,8 +1,12 @@
-import React from "react";
-import { NotFound } from "./pages/NotFound";
-import { Navbar } from "./components/Navbar";
+<<<<<<< lay-your-head/src/App.js
+import React from 'react';
+import {NotFound} from "./pages/NotFound"
+import {Navbar} from "./components/Navbar"
+import './HomePage.css';
 import "./App.css";
-import Registration from "./pages/Registration";
+import Registration from './pages/Registration';
+=======
+
 
 function App() {
   return (
