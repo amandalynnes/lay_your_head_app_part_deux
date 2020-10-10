@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
 import "antd/dist/antd.css";
-import { Form, Input, Button, Image } from "antd";
+import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { auth } from "../../firebase"
 import * as firebase from "firebase/app"
@@ -31,15 +31,10 @@ export default function Login() {
         which would be displayed above this login form component on our login
         page/view
        */}
-      <h1>Lay Your Head</h1>
-      <h3>Because you deserve a place to lay your head</h3>
-      {/* Placeholder Image */}
-      <Image
-        width="100%"
-        height={200}
-        src="error"
-        fallback="https://www.dailynews.com/wp-content/uploads/2020/03/TDB-L-NEWSHELTER-0303-032-SV-5.jpg"
-      />
+  
+      <h2>Find shelters with vacancies near you.
+        <br /> 
+        Because <strong>you</strong> deserve a place to lay your head.</h2>
 
       <br />
       { user ? <h1>Hello</h1> : <LoginForm />}

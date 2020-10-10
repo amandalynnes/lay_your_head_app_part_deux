@@ -1,9 +1,10 @@
 import React from "react";
 import { Navbar } from "./components/Navbar";
 import "./App.css";
-import firebase from "firebase"
-function App() {
-  const firebaseApp = firebase.apps[0];
+import './HomePage.css';
+import HomePage from "./pages/HomePage";
+ function App() {
+
   return (
     // <>
     //   {/* <div className="App">
@@ -13,7 +14,7 @@ function App() {
     // </>
     <div className="App">
       <Navbar />
-
+      <HomePage />
     </div>
   );
 }
