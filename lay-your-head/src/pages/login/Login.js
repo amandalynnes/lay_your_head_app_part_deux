@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
 import "antd/dist/antd.css";
-import { Form, Input, Button } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { auth } from "../../firebase"
-import * as firebase from "firebase/app"
-
+import SignOut from "./SignOut"
+import LoginForm from "./LoginForm"
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 
+// TODO: Take out username field as firebase takes email and password only.
 
 export default function Login() {
   const [, forceUpdate] = useState(); // To disable submit button at the beginning.
   const [user] = useAuthState(auth)
-  const signOut = () => { 
-
-  }
   useEffect(() => {
     forceUpdate({});
   }, []);
-
-  const onFinish = (values) => {
-    console.log("Finish:", values);
-  };
 
   return (
     <div className="login">
@@ -44,78 +36,3 @@ export default function Login() {
 }
 
 
-function SignOut() {
-  return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-  )
-}
-const LoginForm = () => {
-  const [form] = Form.useForm();
-  const googleSignUp = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  }
-
-  
-  const onFinish = (values) => {
-    console.log("Finish:", values);
-  };
-  return <Form
-    form={form}
-    className="form"
-    name="horizontal_login"
-    onFinish={onFinish}
-  >
-    <Form.Item
-      name="username"
-      rules={[
-        {
-          required: true,
-          message: "Please input your username!",
-        },
-      ]}
-    >
-      <Input
-        prefix={<UserOutlined className="site-form-item-icon" />}
-        placeholder="Login"
-      />
-    </Form.Item>
-    <Form.Item
-      name="password"
-      rules={[
-        {
-          required: true,
-          message: "Please input your password!",
-        },
-      ]}
-    >
-      <Input
-        prefix={<LockOutlined className="site-form-item-icon" />}
-        type="password"
-        placeholder="Password"
-      />
-    </Form.Item>
-    <Form.Item shouldUpdate={true}>
-      {() => (
-        <Button
-          type="primary"
-          htmlType="submit"
-          disabled={
-            !form.isFieldsTouched(true) ||
-            form.getFieldsError().filter(({ errors }) => errors.length)
-              .length
-          }
-        >
-          Sign in
-        </Button>
-      )}
-    </Form.Item>
-    <Button type="link" htmlType="button">
-      New User? Sign Up Here
-  </Button>
-    <br />
-    <Button onClick={googleSignUp}>Login with Google!</Button>
-  </Form>
-  {/* Link the following button to the registration page */ }
-  {/* Link the following button to Google login */ }
-}
