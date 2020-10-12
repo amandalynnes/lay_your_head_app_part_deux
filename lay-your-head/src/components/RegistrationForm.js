@@ -1,48 +1,27 @@
-// import React from 'react';
-// import '../../src/App.css';
-// import 'antd/dist/antd.css';
-// import { Input, Space, Button } from 'antd';
-// import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-// import Form from 'antd/lib/form/Form';
-
-
-
-// const RegistrationForm = () => {
-
-//     return (
-//         <div className="Registration">
-//             <Form>
-//                 <Space direction="vertical">
-//                     <Input placeholder="email" />
-//                     <Input placeholder="username" />
-//                     <Input.Password
-//                         placeholder="password"
-//                         iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-//                     />
-//                     <Button type="primary">Sign up</Button>
-//                     <Button type="link" htmlType="button">Back to sign in</Button>
-//                 </Space>
-//             </Form>
-//         </div>
-//     )
-// };
-
-// export default RegistrationForm;
-
 import React, { useState, useEffect } from "react";
 import "../../src/App.css";
 import "antd/dist/antd.css";
 import { Form, Input, Button } from "antd";
 import { MailOutlined, UserOutlined, LockOutlined } from "@ant-design/icons";
+import * as firebase from "firebase/app"
+import { useAuthState } from 'react-firebase-hooks/auth';
+// TODO: Implement redirection to home page after registration
+// TODO: Take out username field as firebase takes email and password only.
 
 export default function RegistrationForm() {
+    // const [user] = useAuthState()
     const [form] = Form.useForm();
     const [, forceUpdate] = useState(); // To disable submit button at the beginning.
     useEffect(() => {
         forceUpdate({});
     }, []);
     const onFinish = (values) => {
-        console.log("Finish:", values);
+        firebase.auth().createUserWithEmailAndPassword(values.email, values.password).catch(function(error) {
+            // Handle Errors here.
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log({errorCode, errorMessage})
+          });
     };
     return (
         <div>
@@ -117,6 +96,7 @@ export default function RegistrationForm() {
             <Button type="link" htmlType="button">
                 Go back to Log in page
       </Button>
+      {/* {user && <h1>Welcome!</h1>} */}
             {/* Link the following button to Google login */}
             {/* <Button>Login with Google!</Button> */}
         </div>
