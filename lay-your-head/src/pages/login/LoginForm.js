@@ -72,7 +72,6 @@ const LoginForm = () => {
           </Button>
         )}
       </Form.Item>
-      {/* Link the following button to the registration page */}
       <Button type="link" htmlType="button" href="/register">
         New User? Sign Up Here
       </Button>
