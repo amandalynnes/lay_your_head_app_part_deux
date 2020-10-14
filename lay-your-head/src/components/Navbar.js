@@ -8,9 +8,10 @@ import {
 import { NotFound } from "../pages/NotFound"
 import Login from "../pages/login/Login"
 import Registration from "../pages/Registration"
+import Home from "../pages/HomePage"
 import "./Navbar.css"
 import Logo from '../logo.png';
-const Home = () => <h1>home</h1>
+// const Home = () => <h1>home</h1>
 export const Navbar = () => {
     return (
         <>
