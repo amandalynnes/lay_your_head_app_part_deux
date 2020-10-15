@@ -13,18 +13,31 @@ import * as firebase from "firebase/app";
 
 function HomePage() {
   // figure out what to do here to update users
-  // console.log(firebase.auth().currentUser);
   // maybe need to add conditional inside the useEffect to make sure the result isn't null?
   const [userInfo, setUserInfo] = useState({});
-  useEffect(async () => {
-    const userData = await firebase.auth().currentUser;
-    setUserInfo(userData);
+  useEffect(() => {
+    let loadedUser;
+    const authListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        loadedUser = user;
+      }
+    });
+    setUserInfo(loadedUser);
+    // const userData = await firebase.auth().currentUser;
+    console.log("Is loadedUser being filled in?", loadedUser);
+    return () => {
+      authListener();
+    };
+    // setUserInfo(userData);
   }, []);
-
+  if (!userInfo) {
+    return <h1>loading </h1>;
+  }
+  // console.log(firebase.auth().currentUser, userInfo);
   return (
     <React.Fragment>
       {/* why is the userInfo not working here? */}
-      {userInfo != null ? console.log(userInfo) : null}
+      {userInfo ? console.log(userInfo) : console.log("info not here yet")}
 
       <PageHeader
         title="Lay Your Head"
@@ -37,9 +50,9 @@ function HomePage() {
       ></PageHeader>
 
       <Space direction="horizontal">
-        <Card size="small" title="Profile" style={{ width: 300 }}>
+        <Card size="small" title={userInfo.displayName} style={{ width: 300 }}>
           <Avatar size={64} icon={<UserOutlined />} />
-          <p>Email </p>
+          <p>{userInfo.email}</p>
           <p>Phone Number</p>
           <Button key="1" type="secondary">
             Edit Profile
