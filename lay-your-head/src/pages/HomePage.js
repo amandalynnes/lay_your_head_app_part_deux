@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
 import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Api from "../utils/api";
 import shelterApi from "../utils/shelterApi";
+
+// const [messages, setMessages] = useState([])
+// useEffect(() => {
+//   let myMessages = []
+//   Api.getMessages()
+// .then((querysnapshot) => {
+// querysnapshot.forEach((message) => {
+// console.log(message.id, message.data())
+// myMessages.push(message.data())
+// })
+// setMessages(myMessages)
+// })
+// }, [])
+
+Api.getMessages()
+.then((querysnapshot) => {
+querysnapshot.forEach((message) => {
+console.log(message.id, message.data())
+})
+})
+
 
 shelterApi()
 
