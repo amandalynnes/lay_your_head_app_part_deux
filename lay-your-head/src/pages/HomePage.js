@@ -3,10 +3,10 @@ import "../HomePage.css";
 import { PageHeader, Button, Card, Avatar, Space } from "antd";
 import { Descriptions, Form, Input, Image, Statistic, Row, Col } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { AuthContext } from "../authContext";
+import SignOut from "./login/SignOut";
 import Api from "../utils/api";
 import shelterApi from "../utils/shelterApi";
-
-import { AuthContext } from "../authContext";
 
 // This calls the shelterAPI and console.logs the data returned.
 // shelterApi();
@@ -21,11 +21,11 @@ function HomePage() {
       <PageHeader
         title="Lay Your Head"
         subTitle="Because you deserve a place to lay your head"
-        extra={[
-          <Button key="1" type="primary">
-            Log Out
-          </Button>,
-        ]}
+        // extra={[
+        //   <Button key="1" type="primary">
+        //     Log Out
+        //   </Button>,
+        // ]}
       ></PageHeader>
 
       <Space direction="horizontal">
@@ -36,6 +36,7 @@ function HomePage() {
           <Button key="1" type="secondary">
             Edit Profile
           </Button>
+          <SignOut />
         </Card>
         <Card title="Find Shelters Near You" style={{ width: 300 }}>
           <Form>
