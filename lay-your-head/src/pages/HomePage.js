@@ -15,8 +15,8 @@ function HomePage() {
 
     
    <PageHeader
-     title="Lay Your Head"
-     subTitle="Because you deserve a place to lay your head"
+    //  title="Lay Your Head"
+     title="Because you deserve a place to lay your head"
      extra={[
        <Button key="1" type="primary">
          Log Out
@@ -28,7 +28,10 @@ function HomePage() {
    <Space direction="horizontal">
     
     <Card size="small" title="Profile" style={{ width: 300 }}>
-    <Avatar size={64} icon={<UserOutlined />} />
+    <Avatar style={{
+        color: 'white',
+        backgroundColor: 'transparent',
+      }} size={64} icon={<UserOutlined />} />
       <p>Email</p>
       <p>Phone Number</p>
       <Button key="1" type="secondary">
