@@ -1,130 +1,17 @@
-
-html{
-    color:black;
-  }
-
-body {
-  font-family: 'Amatic SC', cursive;
+div.ant-card-head-title {
+  color: rgb(97, 1, 97);
+}
   
-}  
-  
-  div.ant-page-header-heading{
-    /* background-color: rgb(202, 195, 195); */
+  .ant-statistic {
     text-align: center;
-    
-  
-  }
-  span.ant-page-header-heading-title{
-    /* font-size: 70px;
-    font-weight: 200; */
-    /* font-style: oblique; */
-    font-size: 35px;
-    font-weight: 200;
-    color: black;
-    
-  }
-  /* span.ant-page-header-heading-sub-title{
-    text-align: center;
-    color:gray; 
-     font-style: oblique; 
-    
-     position: relative; 
-     top: 20px;
-    right:300px;
-  } */
-  button.ant-btn.ant-btn-primary{
-    position: relative;
-      left: 500px;
-      background-color: #fde3cfef;
-      color:black;
-      font-size: 18px;
-      font-weight: 200;
+    margin-left: 20px;
+    margin-top: 20px;
+    /* border: 2px solid rgb(97, 1, 97); */
+    height: 65px;
+}
 
-  }
-  button.ant-btn.ant-btn-secondary{
-    /* position: relative;
-      left: 600px; */
-      color:black;
-      font-size: 18px;
-      font-weight: 200;
-  }
-  button.ant-btn.ant-btn-third{
-    color:black;
-    font-size: 18px;
-    font-weight: 200;
-  }
-  div.ant-card.ant-card-bordered.ant-card-small{
-    /* background-color:rgba(252, 184, 120, 0.377); */
-    background-color:#fde3cfee;
-    width: 200px;
-    font-size: 25px;
-    font-weight: 200;
-  }
-  
-  div.ant-card-head-title{
-    font-size: 25px;
-    font-weight: 200;
-  }
-  svg{
-    size:100px;
-  }
-  p{
-    line-height: 3px;
-    
-  }
-  /* img.ant-image-img{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-left: 500px;
-  } */
-  div.ant-space-item{
-    margin-top:20px;
-  }
-  
-  div.ant-space.ant-space-vertical{
-    margin-top:20px;
-    border: 2px solid black;
-    width: 400px; 
-    height:600px;
-    /* float: left; */
-  
-  }
-  
-  div.ant-image.ant-image-error{
-    
-    width: 400px; 
-    height:600px;
-    /* float: left; */
-    padding:10px;
-    /* margin-left:20px; */
-    margin-top:20px;
-    
-  }
-  
-  .first{
-    /* display:flex;
-    position: relative; */
-  }
-  div.ant-descriptions{
-    text-align:center;
-    margin-left:20px;
-    margin-top:20px;
-    
-  }
-  .ant-statistic{
-    text-align:center;
-    margin-left:20px;
-    /* margin-top:20px; */
-    border: 2px solid black;
-    height:55px;
-    
-  }
-  div.ant-card-grid.first.ant-card-grid-hoverable{
-    margin-left:20px;
-    margin-top:20px;
-   
-  
-  }
-  
-  
+.ant-statistic-title {
+  font-size: 18px;
+  /* font-weight: 200; */
+  font-weight: bold; 
+}
