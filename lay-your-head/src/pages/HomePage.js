@@ -1,44 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "../HomePage.css";
 import { PageHeader, Button, Card, Avatar, Space } from "antd";
 import { Descriptions, Form, Input, Image, Statistic, Row, Col } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import Api from "../utils/api";
 import shelterApi from "../utils/shelterApi";
-import { auth } from "../firebase";
-import * as firebase from "firebase/app";
+
+import { AuthContext } from "../authContext";
 
 // This calls the shelterAPI and console.logs the data returned.
 // shelterApi();
 
 function HomePage() {
-  // figure out what to do here to update users
-  // maybe need to add conditional inside the useEffect to make sure the result isn't null?
-  const [userInfo, setUserInfo] = useState({});
-  useEffect(() => {
-    let loadedUser;
-    const authListener = firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        loadedUser = user;
-      }
-    });
-    setUserInfo(loadedUser);
-    // const userData = await firebase.auth().currentUser;
-    console.log("Is loadedUser being filled in?", loadedUser);
-    return () => {
-      authListener();
-    };
-    // setUserInfo(userData);
-  }, []);
+  const userInfo = useContext(AuthContext);
   if (!userInfo) {
-    return <h1>loading </h1>;
+    return <h1>loading...</h1>;
   }
-  // console.log(firebase.auth().currentUser, userInfo);
   return (
     <React.Fragment>
-      {/* why is the userInfo not working here? */}
-      {userInfo ? console.log(userInfo) : console.log("info not here yet")}
-
       <PageHeader
         title="Lay Your Head"
         subTitle="Because you deserve a place to lay your head"
@@ -58,7 +37,7 @@ function HomePage() {
             Edit Profile
           </Button>
         </Card>
-        <Card title="Find Shelters ear You" style={{ width: 300 }}>
+        <Card title="Find Shelters Near You" style={{ width: 300 }}>
           <Form>
             <Form.Item name={["user", "address"]}>
               <Input placeholder="Address" />
