@@ -22,13 +22,13 @@ export const Navbar = () => {
             <Menu.Item>
                 </Menu.Item>
                 <Menu.Item>
-                    <NavLink to="/">Home</NavLink>
-                </Menu.Item>
-                <Menu.Item>
-                    <NavLink to="/login">Log In!</NavLink>
+                    <NavLink to="/">Log In!</NavLink>
                 </Menu.Item>
                 <Menu.Item>
                     <NavLink to="/register">Registration</NavLink>
+                </Menu.Item>
+                <Menu.Item>
+                    <NavLink to="/home">Home</NavLink>
                 </Menu.Item>
                 <Menu.Item>
                     <NavLink to="/something">NotFound</NavLink>
@@ -36,9 +36,9 @@ export const Navbar = () => {
             </Menu>
             
             <Switch>
-                <Route component={Home} exact path="/" />
+                <Route component={Home} exact path="/home" />
                 <Route component={Registration} path="/register" />
-                <Route component={Login} path="/login" />
+                <Route component={Login} path="/" />
                 <Route component={NotFound} path="*" />
             </Switch>
             
