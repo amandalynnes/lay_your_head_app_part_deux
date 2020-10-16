@@ -39,11 +39,11 @@ function HomePage() {
       <PageHeader
         title="Lay Your Head"
         subTitle="Because you deserve a place to lay your head"
-        extra={[
-          <Button key="1" type="primary">
-            Log Out
-          </Button>,
-        ]}
+        // extra={[
+        //   <Button key="1" type="primary">
+        //     Log Out
+        //   </Button>,
+        // ]}
       ></PageHeader>
 
     
