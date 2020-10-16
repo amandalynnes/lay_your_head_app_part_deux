@@ -27,7 +27,7 @@ export default function Login() {
         page/view
        */}
       { user ? <HomePage /> : <LoginForm />}
-      <SignOut />
+      {/* <SignOut /> */}
     </div>
     </>
   );

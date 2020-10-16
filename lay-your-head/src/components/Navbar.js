@@ -27,7 +27,7 @@ export const Navbar = () => {
                     <NavLink to="/">Log In!</NavLink>
                 </Menu.Item>
                 <Menu.Item>
-                    <NavLink to="/register">Registration</NavLink>
+                    <NavLink to="/register">Register</NavLink>
                 </Menu.Item>
                 <Menu.Item>
                     <NavLink to="/home">Home</NavLink>

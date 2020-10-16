@@ -97,7 +97,7 @@ export default function RegistrationForm() {
             </Button>
           )}
         </Form.Item>
-        <Button type="link" htmlType="button" href="/login">
+        <Button type="link" htmlType="button" href="/">
         Go back to Log in page
       </Button>
       </Form>

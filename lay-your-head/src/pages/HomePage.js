@@ -55,7 +55,7 @@ function HomePage() {
      title="Because you deserve a place to lay your head"
      extra={[
        SignOut()
-     ]}
+    ]}
    >
    </PageHeader>
 
