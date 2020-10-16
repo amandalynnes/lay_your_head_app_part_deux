@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
 import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Api from "../utils/api";
 import shelterApi from "../utils/shelterApi";
+
+// const [messages, setMessages] = useState([])
+// useEffect(() => {
+//   let myMessages = []
+//   Api.getMessages()
+// .then((querysnapshot) => {
+// querysnapshot.forEach((message) => {
+// console.log(message.id, message.data())
+// myMessages.push(message.data())
+// })
+// setMessages(myMessages)
+// })
+// }, [])
+
+Api.getMessages()
+.then((querysnapshot) => {
+querysnapshot.forEach((message) => {
+console.log(message.id, message.data())
+})
+})
+
 
 shelterApi()
 
@@ -15,8 +36,8 @@ function HomePage() {
 
     
    <PageHeader
-     title="Lay Your Head"
-     subTitle="Because you deserve a place to lay your head"
+    //  title="Lay Your Head"
+     title="Because you deserve a place to lay your head"
      extra={[
        <Button key="1" type="primary">
          Log Out
@@ -28,7 +49,10 @@ function HomePage() {
    <Space direction="horizontal">
     
     <Card size="small" title="Profile" style={{ width: 300 }}>
-    <Avatar size={64} icon={<UserOutlined />} />
+    <Avatar style={{
+        color: 'white',
+        backgroundColor: 'transparent',
+      }} size={64} icon={<UserOutlined />} />
       <p>Email</p>
       <p>Phone Number</p>
       <Button key="1" type="secondary">
