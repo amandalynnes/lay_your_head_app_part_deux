@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, AuthContext } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
 import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
@@ -6,6 +6,7 @@ import { UserOutlined } from '@ant-design/icons';
 import Api from "../utils/api";
 import {ShelterComponent} from "../components/ShelterComponent"
 import shelterApi from "../utils/shelterApi";
+
 
 // const [messages, setMessages] = useState([])
 // useEffect(() => {
@@ -31,10 +32,10 @@ console.log(message.id, message.data())
 shelterApi()
 
 function HomePage() {
-  const userInfo = useContext(AuthContext);
-  if (!userInfo) {
-    return <h1>loading...</h1>;
-  }
+  // const userInfo = useContext(AuthContext);
+  // if (!userInfo) {
+  //   return <h1>loading...</h1>;
+  // }
   return (
     <React.Fragment>
       <PageHeader
@@ -111,8 +112,8 @@ function HomePage() {
     
    
 
-        <Statistic title="Available Beds" value={0} />
-      </Card.Grid>
+        {/* <Statistic title="Available Beds" value={0} /> */}
+      {/* </Card.Grid> */}
     </React.Fragment>
   );
 }
