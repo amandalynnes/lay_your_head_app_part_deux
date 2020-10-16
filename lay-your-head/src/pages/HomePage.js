@@ -59,7 +59,7 @@ function HomePage() {
          Edit Profile
        </Button>
     </Card>
-    <Card title="Find Shelters ear You" style={{ width: 300 }}>
+    <Card title="Find Shelters near You" style={{ width: 300 }}>
     <Form>
     <Form.Item
         name={['user', 'address']}
