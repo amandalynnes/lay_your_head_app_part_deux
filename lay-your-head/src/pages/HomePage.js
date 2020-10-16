@@ -4,7 +4,7 @@ import { PageHeader, Button, Card, Avatar, Space} from 'antd';
 import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Api from "../utils/api";
-import ShelterComponent from "../components/ShelterComponent"
+import {ShelterComponent} from "../components/ShelterComponent"
 import shelterApi from "../utils/shelterApi";
 
 shelterApi()
