@@ -30,9 +30,6 @@ export const Navbar = () => {
                 <Menu.Item>
                     <NavLink to="/home">Home</NavLink>
                 </Menu.Item>
-                <Menu.Item>
-                    <NavLink to="/something">NotFound</NavLink>
-                </Menu.Item>
             </Menu>
             
             <Switch>
