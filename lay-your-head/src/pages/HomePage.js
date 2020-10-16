@@ -111,7 +111,7 @@ function HomePage() {
     
    
 
-        <Statistic title="Available Beds" value={0} />
+        {/* <Statistic title="Available Beds" value={0} /> */}
     </React.Fragment>
   );
 }
