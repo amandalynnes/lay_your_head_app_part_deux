@@ -1,20 +1,12 @@
 import React from "react";
 import { Navbar } from "./components/Navbar";
 import "./App.css";
-import './HomePage.css';
-import HomePage from "./pages/HomePage";
- function App() {
-
+import "./HomePage.css";
+function App() {
   return (
-    // <>
-    //   {/* <div className="App">
-    //     <h1>Lay Your Head</h1>
-    //   </div> */}
-    //   <Registration />
-    // </>
+   
     <div className="App">
       <Navbar />
-      <HomePage />
     </div>
   );
 }
