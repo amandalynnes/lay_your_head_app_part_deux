@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
 import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
@@ -7,17 +7,50 @@ import Api from "../utils/api";
 import {ShelterComponent} from "../components/ShelterComponent"
 import shelterApi from "../utils/shelterApi";
 
+// const [messages, setMessages] = useState([])
+// useEffect(() => {
+//   let myMessages = []
+//   Api.getMessages()
+// .then((querysnapshot) => {
+// querysnapshot.forEach((message) => {
+// console.log(message.id, message.data())
+// myMessages.push(message.data())
+// })
+// setMessages(myMessages)
+// })
+// }, [])
+
+Api.getMessages()
+.then((querysnapshot) => {
+querysnapshot.forEach((message) => {
+console.log(message.id, message.data())
+})
+})
+
+
 shelterApi()
 
 function HomePage() {
+  const userInfo = useContext(AuthContext);
+  if (!userInfo) {
+    return <h1>loading...</h1>;
+  }
   return (
-    
-    <React.Fragment> 
+    <React.Fragment>
+      <PageHeader
+        title="Lay Your Head"
+        subTitle="Because you deserve a place to lay your head"
+        // extra={[
+        //   <Button key="1" type="primary">
+        //     Log Out
+        //   </Button>,
+        // ]}
+      ></PageHeader>
 
     
    <PageHeader
-     title="Lay Your Head"
-     subTitle="Because you deserve a place to lay your head"
+    //  title="Lay Your Head"
+     title="Because you deserve a place to lay your head"
      extra={[
        <Button key="1" type="primary">
          Log Out
@@ -29,7 +62,10 @@ function HomePage() {
    <Space direction="horizontal">
     
     <Card size="small" title="Profile" style={{ width: 300 }}>
-    <Avatar size={64} icon={<UserOutlined />} />
+    <Avatar style={{
+        color: 'white',
+        backgroundColor: 'transparent',
+      }} size={64} icon={<UserOutlined />} />
       <p>Email</p>
       <p>Phone Number</p>
       <Button key="1" type="secondary">
@@ -75,11 +111,10 @@ function HomePage() {
     
    
 
- 
-  
-</React.Fragment>
-  )
+        <Statistic title="Available Beds" value={0} />
+      </Card.Grid>
+    </React.Fragment>
+  );
 }
-
 
 export default HomePage;
