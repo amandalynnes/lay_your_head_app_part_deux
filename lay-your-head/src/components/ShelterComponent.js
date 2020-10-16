@@ -13,7 +13,7 @@ export const ShelterComponent = () => {
     }
     const {status, data, error} = useQuery("shelter", fetchData)
     // const {features} = data
-    if(status==="loading"){return <p>Loading babe...</p>}
+    if(status==="loading"){return <p>Loading </p>}
     if(error) return <p>some worng</p>
     if(data)
     return (

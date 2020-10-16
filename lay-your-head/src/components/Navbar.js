@@ -8,7 +8,7 @@ import {
 import { NotFound } from "../pages/NotFound"
 import Login from "../pages/login/Login"
 import Registration from "../pages/Registration"
-import Home from "../pages/HomePage"
+import HomePage from "../pages/HomePage"
 import Logo from "../logo.png"
 import "./Navbar.css"
 export const Navbar = () => {
@@ -36,7 +36,7 @@ export const Navbar = () => {
             </Menu>
             
             <Switch>
-                <Route component={Home} exact path="/home" />
+                <Route component={HomePage} exact path="/home" />
                 <Route component={Registration} path="/register" />
                 <Route component={Login} path="/" />
                 <Route component={NotFound} path="*" />
