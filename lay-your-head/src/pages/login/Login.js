@@ -17,6 +17,8 @@ export default function Login() {
   }, []);
 
   return (
+    <>
+     <br />
     <div className="login">
       {/*
         The header with the hero image and text should be a separate component,
@@ -32,6 +34,7 @@ export default function Login() {
       { user ? <h1>Hello</h1> : <LoginForm />}
       <SignOut />
     </div>
+    </>
   );
 }
 
