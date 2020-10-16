@@ -23,6 +23,12 @@ const LoginForm = () => {
       });
   };
   return (
+    <>
+     <h2>Find shelters with vacancies near you.
+        <br /> 
+        Because <strong>you</strong> deserve a place to lay your head.</h2>
+
+      <br />
     <Form
       form={form}
       className="form"
@@ -78,6 +84,7 @@ const LoginForm = () => {
       <br />
       <Button onClick={googleSignUp}>Login with Google!</Button>
     </Form>
+    </>
   );
 };
 

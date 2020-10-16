@@ -18,7 +18,7 @@ export const Navbar = () => {
         <>
 
         <Image width={150} height={150} src={Logo3}></Image> 
-            <Image width={1450} height={250} 
+            <Image width={1500} height={250} 
              src="https://www.artech.com/wp-content/uploads/2018/08/iStock-668218790_Community-Building-web.jpg"/>
             <Menu  mode="horizontal">
             <Menu.Item>
