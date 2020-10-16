@@ -10,7 +10,9 @@ div.ant-card-head-title {
     height: 65px;
 }
 
-
+.ant-page-header-heading-extra {
+  margin-top: 0;
+}
 
 .ant-statistic-title {
   font-size: 18px;

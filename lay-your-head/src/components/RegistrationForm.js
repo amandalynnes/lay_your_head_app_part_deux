@@ -5,6 +5,7 @@ import { Form, Input, Button } from "antd";
 import { MailOutlined, UserOutlined, LockOutlined } from "@ant-design/icons";
 import * as firebase from "firebase/app";
 import { useAuthState } from "react-firebase-hooks/auth";
+import FormItem from "antd/lib/form/FormItem";
 // TODO: Implement redirection to home page after registration
 // TODO: Take out username field as firebase takes email and password only.
 
@@ -96,10 +97,10 @@ export default function RegistrationForm() {
             </Button>
           )}
         </Form.Item>
-      </Form>
-      <Button type="link" htmlType="button" href="/login">
+        <Button type="link" htmlType="button" href="/login">
         Go back to Log in page
       </Button>
+      </Form>
     </div>
   );
 }
