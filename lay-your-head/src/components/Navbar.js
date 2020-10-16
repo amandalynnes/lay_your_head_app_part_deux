@@ -38,9 +38,9 @@ export const Navbar = () => {
             </Menu>
             
             <Switch>
-                <Route component={Home} exact path="/home" />
+                <Route component={Login} exact path="/" />
+                <Route component={Home} path="/home" />
                 <Route component={Registration} path="/register" />
-                <Route component={Login} path="/" />
                 <Route component={NotFound} path="*" />
             </Switch>
             

@@ -34,7 +34,7 @@ function HomePage() {
     
     <React.Fragment> 
 
-    
+    <br />
    <PageHeader
     //  title="Lay Your Head"
      title="Because you deserve a place to lay your head"
