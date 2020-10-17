@@ -10,6 +10,7 @@ const Registration = () => {
 
   return (
     <>
+         <br />
         <RegistrationForm />
     </>
   )

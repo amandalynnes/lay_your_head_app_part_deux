@@ -29,7 +29,8 @@ const ShelterCard = ({shelter}) => {
     const {attributes} = shelter    
     const styles = {    
         width: "150px",
-        height: "150px"
+        height: "150px",
+        border: "2px solid midnightblue"
     }
     const position = { 
         lat: attributes.LATITUDE,
@@ -46,7 +47,7 @@ const ShelterCard = ({shelter}) => {
             <Descriptions.Item label="Address"> {attributes.ADDRESS}</Descriptions.Item>
             <Descriptions.Item label="State and Zipcode"> {attributes.STATE, attributes.ZIP}</Descriptions.Item>
         </Descriptions>
-        <Statistic title="Available Beds" value={attributes.NUMBER_OF_BEDS} />
+        <Statistic title="Number of Beds" value={attributes.NUMBER_OF_BEDS} />
        
 
     </Card.Grid>)

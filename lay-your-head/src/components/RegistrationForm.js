@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "../../src/App.css";
 import "antd/dist/antd.css";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Alert } from "antd";
 import { MailOutlined, UserOutlined, LockOutlined } from "@ant-design/icons";
 import * as firebase from "firebase/app";
 import { useAuthState } from "react-firebase-hooks/auth";
+import FormItem from "antd/lib/form/FormItem";
+import "./RegisterForm.css"
+import { useHistory } from "react-router";
 // TODO: Implement redirection to home page after registration
 // TODO: Take out username field as firebase takes email and password only.
 
 export default function RegistrationForm() {
+  const [message, setMessage] = useState()
+  const history = useHistory()
   // const [user] = useAuthState()
   const [form] = Form.useForm();
   const [, forceUpdate] = useState(); // To disable submit button at the beginning.
@@ -16,15 +21,15 @@ export default function RegistrationForm() {
     forceUpdate({});
   }, []);
   const onFinish = (values) => {
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(values.email, values.password)
-      .catch(function (error) {
-        // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        console.log({ errorCode, errorMessage });
-      });
+    console.log(values)
+    try{  
+      setMessage(false)
+      firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
+      history.push("/")
+    } catch(error) {  
+      setMessage("Invalid Email")
+      console.log(error)
+    }
   };
   return (
     <div>
@@ -35,7 +40,7 @@ export default function RegistrationForm() {
       <Form
         form={form}
         name="horizontal_login"
-        layout="inline"
+        layout="vertical"
         onFinish={onFinish}
       >
         <Form.Item
@@ -53,20 +58,6 @@ export default function RegistrationForm() {
           />
         </Form.Item>
         <Form.Item
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: "Please input your username!",
-            },
-          ]}
-        >
-          <Input
-            prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="username"
-          />
-        </Form.Item>
-        <Form.Item
           name="password"
           rules={[
             {
@@ -81,6 +72,7 @@ export default function RegistrationForm() {
             placeholder="Password"
           />
         </Form.Item>
+        {message ? <Alert className="error" type="error" message={message} showIcon /> : null}
         <Form.Item shouldUpdate={true}>
           {() => (
             <Button
@@ -96,10 +88,10 @@ export default function RegistrationForm() {
             </Button>
           )}
         </Form.Item>
-      </Form>
-      <Button type="link" htmlType="button" href="/login">
-        Go back to Log in page
+        <Button type="link" htmlType="button" href="/">
+          Go back to Log in page
       </Button>
+      </Form>
     </div>
   );
 }

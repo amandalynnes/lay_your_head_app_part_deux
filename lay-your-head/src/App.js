@@ -4,7 +4,6 @@ import "./App.css";
 import "./HomePage.css";
 function App() {
   return (
-   
     <div className="App">
       <Navbar />
     </div>

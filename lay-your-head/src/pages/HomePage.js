@@ -1,12 +1,13 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, {  useContext } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
-import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
+import {  Form, Input  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Api from "../utils/api";
 import {ShelterComponent} from "../components/ShelterComponent"
 import shelterApi from "../utils/shelterApi";
 import {AuthContext} from "../authContext"
+import SignOut from "./login/SignOut"
 
 
 // const [messages, setMessages] = useState([])
@@ -35,11 +36,11 @@ shelterApi()
 function HomePage() {
   const userInfo = useContext(AuthContext);
   if (!userInfo) {
-    return <h1>loading...</h1>;
+    return <h1>Please Sign In</h1>;
   }
   return (
     <React.Fragment>
-      <PageHeader
+      {/* <PageHeader
         title="Lay Your Head"
         subTitle="Because you deserve a place to lay your head"
         // extra={[
@@ -47,17 +48,15 @@ function HomePage() {
         //     Log Out
         //   </Button>,
         // ]}
-      ></PageHeader>
+      ></PageHeader> */}
 
-    
+    <br />
    <PageHeader
     //  title="Lay Your Head"
      title="Because you deserve a place to lay your head"
      extra={[
-       <Button key="1" type="primary">
-         Log Out
-       </Button>,
-     ]}
+       SignOut()
+    ]}
    >
    </PageHeader>
 
@@ -107,13 +106,7 @@ function HomePage() {
     </Form>
       </Card>
       </Space>
-      
-  
     <ShelterComponent />
-    
-   
-
-        <Statistic title="Available Beds" value={0} />
     </React.Fragment>
   );
 }
