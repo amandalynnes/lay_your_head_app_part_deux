@@ -29,7 +29,8 @@ const ShelterCard = ({shelter}) => {
     const {attributes} = shelter    
     const styles = {    
         width: "150px",
-        height: "150px"
+        height: "150px",
+        border: "2px solid midnightblue"
     }
     const position = { 
         lat: attributes.LATITUDE,

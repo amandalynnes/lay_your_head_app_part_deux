@@ -105,13 +105,7 @@ function HomePage() {
     </Form>
       </Card>
       </Space>
-      
-  
     <ShelterComponent />
-    
-   
-
-        {/* <Statistic title="Available Beds" value={0} /> */}
     </React.Fragment>
   );
 }
