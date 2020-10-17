@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, {  useContext } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
-import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
+import {  Form, Input  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Api from "../utils/api";
 import {ShelterComponent} from "../components/ShelterComponent"
