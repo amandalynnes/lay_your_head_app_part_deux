@@ -55,7 +55,7 @@ function HomePage() {
      title="Because you deserve a place to lay your head"
      extra={[
        SignOut()
-     ]}
+    ]}
    >
    </PageHeader>
 
@@ -111,7 +111,7 @@ function HomePage() {
     
    
 
-        <Statistic title="Available Beds" value={0} />
+        {/* <Statistic title="Available Beds" value={0} /> */}
     </React.Fragment>
   );
 }
