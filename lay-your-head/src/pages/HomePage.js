@@ -24,11 +24,11 @@ import SignOut from "./login/SignOut"
 // }, [])
 
 Api.getMessages()
-.then((querysnapshot) => {
-querysnapshot.forEach((message) => {
-console.log(message.id, message.data())
-})
-})
+// .then((querysnapshot) => {
+// querysnapshot.forEach((message) => {
+// console.log(message.id, message.data())
+// })
+// })
 
 
 shelterApi()
