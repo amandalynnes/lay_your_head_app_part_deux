@@ -1,5 +1,3 @@
-import React, {  useContext } from 'react';
-import {AuthContext} from "../authContext"
 import {db} from "../firebase"
 
 class API {
@@ -23,7 +21,7 @@ class API {
      async createMessage(message) {
        try {
          
-         const userInfo = useContext(AuthContext);
+         const userInfo = {}; //TODO fix me
         const messageRef = await db.collection("messages").add({
           "from": userInfo,
           "text": message
