@@ -8,14 +8,14 @@ class API {
         try {
 
         const messagesRef = await db.collection("messages").get()
-        const result = await messagesRef.data()
-        console.log(result)
-        // console.log(messagesRef)
-        // return messagesRef;
-        return result
+        // const result = await messagesRef.data()
+        // console.log(result)
+        console.log(messagesRef)
+        return messagesRef;
+        // return result
       } catch (err) {
         console.error(err);
-        // throw err;
+        throw err;
       }
      }
 
@@ -33,7 +33,7 @@ class API {
         return messageRef;
       } catch (err) {
         console.error(err);
-        // throw err;
+        throw err;
       }
     }
 

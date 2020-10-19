@@ -24,35 +24,25 @@ import SignOut from "./login/SignOut"
 // }, [])
 
 Api.getMessages()
-// .then((querysnapshot) => {
-// querysnapshot.forEach((message) => {
-// console.log(message.id, message.data())
-// })
-// })
+.then((querysnapshot) => {
+querysnapshot.forEach((message) => {
+console.log(message.id, message.data())
+})
+})
 
 
 shelterApi()
 
 function HomePage() {
   const userInfo = useContext(AuthContext);
+  console.log(userInfo)
   if (!userInfo) {
     return <h1>Please Sign In</h1>;
   }
   return (
     <React.Fragment>
-      {/* <PageHeader
-        title="Lay Your Head"
-        subTitle="Because you deserve a place to lay your head"
-        // extra={[
-        //   <Button key="1" type="primary">
-        //     Log Out
-        //   </Button>,
-        // ]}
-      ></PageHeader> */}
-
     <br />
    <PageHeader
-    //  title="Lay Your Head"
      title="Because you deserve a place to lay your head"
      extra={[
        SignOut()
@@ -67,13 +57,14 @@ function HomePage() {
         color: 'white',
         backgroundColor: 'transparent',
       }} size={64} icon={<UserOutlined />} />
-      <p>Email</p>
-      <p>Phone Number</p>
+      <p>{userInfo.email}</p>
+      <p>{userInfo.displayName}</p>
+      {/* <p>Phone Number</p> */}
       <Button key="1" type="secondary">
          Edit Profile
        </Button>
     </Card>
-    <Card title="Find Shelters Near You" style={{ width: 300 }}>
+    {/* <Card title="Find Shelters Near You" style={{ width: 300 }}>
     <Form>
     <Form.Item
         name={['user', 'address']}
@@ -104,7 +95,7 @@ function HomePage() {
         </Button>
         </Form.Item>
     </Form>
-      </Card>
+      </Card> */}
       </Space>
     <ShelterComponent />
     </React.Fragment>
