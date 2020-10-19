@@ -24,6 +24,11 @@ h4 {
     font: bold;  */
 }
 
+.ant-input {
+  font-size: 20px;
+  font-weight: 200;
+}
+
 .ant-menu-horizontal > .ant-menu-item a {
     color: rgb(97, 1, 97);
     font-size: 25px;
