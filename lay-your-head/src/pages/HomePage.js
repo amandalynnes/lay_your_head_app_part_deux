@@ -89,8 +89,8 @@ function HomePage() {
             backgroundColor: 'transparent',
           }} size={64} icon={<UserOutlined />} />
           {isEditingProfile ? (<>
-            <input type="text" value={profileEdit.displayName} name="displayName" onChange={updateProfileValues} />
-            <input type="text" value={profileEdit.email} name="email" onChange={updateProfileValues} />
+            <Input type="text" value={profileEdit.displayName} name="displayName" onChange={updateProfileValues} />
+            <Input type="text" value={profileEdit.email} name="email" onChange={updateProfileValues} />
             {/* <p>Phone Number</p> */}
             <Button key="1" type="secondary" onClick={updateProfile}>
               Save Profile
