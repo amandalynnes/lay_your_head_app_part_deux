@@ -12,7 +12,10 @@ export const AuthProvider = ({ children }) => {
       setUser(fbUser)
     }
   }
-  const deleteUser = () => app.auth().currentUser.delete().then(() => setUser(null))
+  const deleteUser = () => {
+    console.log("hello delete")
+    app.auth().currentUser.delete().then(() => setUser(null))
+  }
 
   useEffect(() => {
     const authListener = app.auth().onAuthStateChanged((user) => {

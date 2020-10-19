@@ -38,10 +38,20 @@ function HomePage() {
   const {user: userInfo, updateFirebaseUser} = useContext(AuthContext);
   const {deleteUser} = useContext(AuthContext);
   const [isEditingProfile, setEditingProfile] = useState(false)
-  const [profileEdit, setProfileEdit] = useState({
-    displayName: userInfo.displayName,
-    email: userInfo.email
-  })
+  const [profileEdit, setProfileEdit] = useState(() => {
+    if (userInfo) {
+      return {
+        displayName: userInfo.displayName,
+        email: userInfo.email
+      }} else {
+        return {
+          displayName: "no data",
+          email: "no data"
+        }
+      }
+    }
+
+  )
   const updateProfileValues = (ev) => {
     const name = ev.target.name;
     const value = ev.target.value
