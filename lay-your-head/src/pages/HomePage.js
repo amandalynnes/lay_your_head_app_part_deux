@@ -8,6 +8,8 @@ import {ShelterComponent} from "../components/ShelterComponent"
 import shelterApi from "../utils/shelterApi";
 import {AuthContext} from "../authContext"
 import SignOut from "./login/SignOut"
+import PostMessages from "../components/PostMessages"
+
 
 // const [messages, setMessages] = useState([])
 // useEffect(() => {
@@ -50,6 +52,9 @@ function HomePage() {
       ></PageHeader> */}
 
     <br />
+  <PostMessages/>
+  
+  <br />
    <PageHeader
     //  title="Lay Your Head"
      title="Because you deserve a place to lay your head"
