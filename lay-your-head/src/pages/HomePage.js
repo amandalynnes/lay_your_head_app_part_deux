@@ -35,21 +35,22 @@ Api.getMessages()
 shelterApi()
 
 function HomePage() {
-  const {user: userInfo, updateFirebaseUser} = useContext(AuthContext);
-  const {deleteUser} = useContext(AuthContext);
+  const { user: userInfo, updateFirebaseUser } = useContext(AuthContext);
+  const { deleteUser } = useContext(AuthContext);
   const [isEditingProfile, setEditingProfile] = useState(false)
   const [profileEdit, setProfileEdit] = useState(() => {
     if (userInfo) {
       return {
         displayName: userInfo.displayName,
         email: userInfo.email
-      }} else {
-        return {
-          displayName: "no data",
-          email: "no data"
-        }
+      }
+    } else {
+      return {
+        displayName: "no data",
+        email: "no data"
       }
     }
+  }
 
   )
   const updateProfileValues = (ev) => {
@@ -95,14 +96,14 @@ function HomePage() {
             <Button key="1" type="secondary" onClick={updateProfile}>
               Save Profile
        </Button>
-       <Button key="1" type="secondary" onClick={deleteUser}>
+            <Button key="1" type="secondary" onClick={deleteUser}>
               Delete User
        </Button>
-       </>) : (<><p>{userInfo.email}</p>
-              <p>{userInfo.displayName}</p>
-              {/* <p>Phone Number</p> */}
-              <Button key="1" type="secondary" onClick={() => setEditingProfile(true)}>
-                Edit Profile
+          </>) : (<><p>{userInfo.email}</p>
+            <p>{userInfo.displayName}</p>
+            {/* <p>Phone Number</p> */}
+            <Button key="1" type="secondary" onClick={() => setEditingProfile(true)}>
+              Edit Profile
        </Button></>)}
         </Card>
         {/* <Card title="Find Shelters Near You" style={{ width: 300 }}>
