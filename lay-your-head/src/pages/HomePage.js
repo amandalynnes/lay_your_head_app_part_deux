@@ -96,7 +96,7 @@ function HomePage() {
             <Button key="1" type="secondary" onClick={updateProfile}>
               Save Profile
        </Button>
-            <Button key="1" type="secondary" onClick={deleteUser}>
+            <Button key="1" type="secondary" style={{color: "red" }} onClick={deleteUser}>
               Delete User
        </Button>
           </>) : (<><p>{userInfo.email}</p>
