@@ -20,7 +20,7 @@ const LoginForm = () => {
   };
   return (
     <>
-      <h2>Find shelters with vacancies near you.
+      <h2>Find shelters near you.
         <br />
         Because <strong>you</strong> deserve a place to lay your head.</h2>
 
