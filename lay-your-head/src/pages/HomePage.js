@@ -11,15 +11,28 @@ import SignOut from "./login/SignOut"
 import * as firebase from "firebase/app"
 
 
-Api.getMessages()
-  .then((querysnapshot) => {
-    querysnapshot.forEach((message) => {
-      console.log(message.id, message.data())
-    })
-  })
+// const [messages, setMessages] = useState([])
+// useEffect(() => {
+//   let myMessages = []
+//   Api.getMessages()
+// .then((querysnapshot) => {
+// querysnapshot.forEach((message) => {
+// console.log(message.id, message.data())
+// myMessages.push(message.data())
+// })
+// setMessages(myMessages)
+// })
+// }, [])
+
+// Api.getMessages()
+// .then((querysnapshot) => {
+// querysnapshot.forEach((message) => {
+// console.log(message.id, message.data().text)
+// })
+// })
 
 
-shelterApi()
+
 
 function HomePage() {
   const { user: userInfo, updateFirebaseUser } = useContext(AuthContext);
@@ -69,7 +82,17 @@ function HomePage() {
       >
       </PageHeader>
 
-      <Space direction="horizontal">
+    <br />
+  
+  <br />
+   <PageHeader
+    //  title="Lay Your Head"
+     title="Because you deserve a place to lay your head"
+     extra={[
+       SignOut()
+     ]}
+   >
+   </PageHeader>
 
         <Card size="small" title="Profile" style={{ width: 300 }}>
           <Avatar style={{

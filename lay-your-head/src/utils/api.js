@@ -2,10 +2,10 @@ import {db} from "../firebase"
 
 class API {
 
-    async getMessages() {
+    async getMessages(shelter) {
         try {
 
-        const messagesRef = await db.collection("messages").get()
+        const messagesRef = db.collection("messages").doc(`${shelter}`).collection("chat").get()
         // const result = await messagesRef.data()
         // console.log(result)
         console.log(messagesRef)
@@ -17,24 +17,26 @@ class API {
       }
      }
 
-     
-     async createMessage(message) {
-       try {
-         
-         const userInfo = {}; //TODO fix me
-        const messageRef = await db.collection("messages").add({
-          "from": userInfo,
-          "text": message
+     async postMessages(shelter, message) {
+      try {
+        let shelterRef = db.collection('messages').doc(`${shelter}`).collection("chat")
+        shelterRef.add({text: message}).then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
         })
-          
-        console.log(messageRef)
-        return messageRef;
-      } catch (err) {
-        console.error(err);
-        throw err;
-      }
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+      return shelterRef;
+    } catch (err) {
+      console.error(err);
+      throw err;
     }
+   }
 
 }
+
+
+
+ 
 
 export default new API();
