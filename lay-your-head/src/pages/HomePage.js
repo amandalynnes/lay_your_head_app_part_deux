@@ -9,6 +9,7 @@ import shelterApi from "../utils/shelterApi";
 import {AuthContext} from "../authContext"
 import SignOut from "./login/SignOut"
 import PostMessages from "../components/PostMessages"
+import List from "../components/List"
 
 
 // const [messages, setMessages] = useState([])
@@ -24,19 +25,26 @@ import PostMessages from "../components/PostMessages"
 // })
 // }, [])
 
-Api.getMessages()
-.then((querysnapshot) => {
-querysnapshot.forEach((message) => {
-console.log(message.id, message.data())
-})
-})
 
 
 shelterApi()
 
 function HomePage() {
   const userInfo = useContext(AuthContext);
-  if (!userInfo) {
+  
+  const [messages, setMessages] = useState([])
+useEffect(() => {
+  let myMessages = []
+  Api.getMessages()
+.then((querysnapshot) => {
+querysnapshot.forEach((message) => {
+console.log(message.id, message.data())
+myMessages.push(message.data())
+})
+setMessages(myMessages)
+})
+}, [])
+  if (!userInfo){
     return <h1>Please Sign In</h1>;
   }
   return (
@@ -53,6 +61,7 @@ function HomePage() {
 
     <br />
   <PostMessages/>
+  <List state={messages}/>
   
   <br />
    <PageHeader

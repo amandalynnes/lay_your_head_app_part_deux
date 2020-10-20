@@ -7,16 +7,16 @@ import {db} from "../firebase"
 
 
 export default function PostMessages (){ 
-    const [state, setState] = useState({text: ""});
+    const [state, setState] = useState("");
     
     const handlePost= (event) => {
         var shelterRef = db.collection('messages')
-        console.log(shelterRef)
+        // console.log(shelterRef)
         
         event.preventDefault() 
         console.log(state)
         shelterRef.add({text: state}).then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
+            // console.log("Document written with ID: ", docRef.id);
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
@@ -28,7 +28,7 @@ export default function PostMessages (){
         event.preventDefault()
         const inputValue = event.target.value;
         setState(inputValue)
-        console.log(state.text)
+        // console.log(state.text)
       }
 
     return (
