@@ -10,9 +10,8 @@ import Login from "../pages/login/Login"
 import Registration from "../pages/Registration"
 import HomePage from "../pages/HomePage"
 import ProtectedRoute from "./ProtectedRoute"
-// import Logo from "../logo.png"
-// import Logo2 from "../logo2.png"
 import Logo3 from "../logo3.png"
+
 import "./Navbar.css"
 
 export const Navbar = () => {

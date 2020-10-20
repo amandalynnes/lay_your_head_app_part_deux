@@ -12,7 +12,6 @@ export const ShelterComponent = () => {
         return data
     }
     const {status, data, error} = useQuery("shelter", fetchData)
-    // const {features} = data
     if(status==="loading"){return <p>Loading </p>}
     if(error) return <p>something went wrong</p>
     if(data)
@@ -36,13 +35,12 @@ const ShelterCard = ({shelter}) => {
         lat: attributes.LATITUDE,
         lng: attributes.LONGITUDE
     }
-    return (<Card.Grid className="first" >
+    return (<Card.Grid className="first">
         <LoadScript  googleMapsApiKey="AIzaSyB9SYF-7udz1_Ydp8fUce08yWSCJKaF2qQ">
         <GoogleMap mapContainerStyle={styles} zoom={14} center={position} > <Marker position={position}></Marker></GoogleMap>
         </LoadScript>
         <Descriptions title="" layout="vertical">
 <Descriptions.Item label="Name"> {attributes.FACILITY_NAME}</Descriptions.Item>
-            {/* Consider making the contact INFO as a button instead to send a message or something, since there's no phone number */}
             <Descriptions.Item label="Info">Contact</Descriptions.Item>
             <Descriptions.Item label="Address"> {attributes.ADDRESS}</Descriptions.Item>
             <Descriptions.Item label="State and Zipcode"> {attributes.STATE, attributes.ZIP}</Descriptions.Item>
