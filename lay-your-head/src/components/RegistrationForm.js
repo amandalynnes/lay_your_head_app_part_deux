@@ -34,7 +34,7 @@ export default function RegistrationForm() {
   return (
     <div>
       <h2>
-        Because <strong>you</strong> deserve a place to lay your head.
+        <strong>You</strong> deserve a place to lay your head.
       </h2>
       <h4>Register Here</h4>
       <Form

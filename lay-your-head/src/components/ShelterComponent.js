@@ -14,7 +14,7 @@ export const ShelterComponent = () => {
     const {status, data, error} = useQuery("shelter", fetchData)
     // const {features} = data
     if(status==="loading"){return <p>Loading </p>}
-    if(error) return <p>some worng</p>
+    if(error) return <p>something went wrong</p>
     if(data)
     return (
         <>         
@@ -30,7 +30,7 @@ const ShelterCard = ({shelter}) => {
     const styles = {    
         width: "150px",
         height: "150px",
-        border: "2px solid midnightblue"
+        border: "2px solid grey"
     }
     const position = { 
         lat: attributes.LATITUDE,
