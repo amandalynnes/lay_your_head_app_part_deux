@@ -10,16 +10,15 @@ import Login from "../pages/login/Login"
 import Registration from "../pages/Registration"
 import HomePage from "../pages/HomePage"
 import ProtectedRoute from "./ProtectedRoute"
-// import Logo from "../logo.png"
-// import Logo2 from "../logo2.png"
 import Logo3 from "../logo3.png"
+
 import "./Navbar.css"
 
 export const Navbar = () => {
     return (
         <>
 
-        <Image width={150} height={150} src={Logo3}></Image> 
+        <Image width={180} height={150} src={Logo3}></Image> 
             <Image width={1500} height={250} 
              src="https://www.artech.com/wp-content/uploads/2018/08/iStock-668218790_Community-Building-web.jpg"/>
             <Menu  mode="horizontal">

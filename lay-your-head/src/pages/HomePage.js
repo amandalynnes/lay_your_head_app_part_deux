@@ -11,19 +11,6 @@ import SignOut from "./login/SignOut"
 import * as firebase from "firebase/app"
 
 
-// const [messages, setMessages] = useState([])
-// useEffect(() => {
-//   let myMessages = []
-//   Api.getMessages()
-// .then((querysnapshot) => {
-// querysnapshot.forEach((message) => {
-// console.log(message.id, message.data())
-// myMessages.push(message.data())
-// })
-// setMessages(myMessages)
-// })
-// }, [])
-
 Api.getMessages()
   .then((querysnapshot) => {
     querysnapshot.forEach((message) => {
@@ -92,7 +79,6 @@ function HomePage() {
           {isEditingProfile ? (<>
             <Input type="text" value={profileEdit.displayName} name="displayName" onChange={updateProfileValues} />
             <Input type="text" value={profileEdit.email} name="email" onChange={updateProfileValues} />
-            {/* <p>Phone Number</p> */}
             <Button key="1" type="secondary" onClick={updateProfile}>
               Save Profile
        </Button>
@@ -101,43 +87,10 @@ function HomePage() {
        </Button>
           </>) : (<><p>{userInfo.email}</p>
             <p>{userInfo.displayName}</p>
-            {/* <p>Phone Number</p> */}
             <Button key="1" type="secondary" onClick={() => setEditingProfile(true)}>
               Edit Profile
        </Button></>)}
         </Card>
-        {/* <Card title="Find Shelters Near You" style={{ width: 300 }}>
-    <Form>
-    <Form.Item
-        name={['user', 'address']}
-      
-      >
-        <Input placeholder="Address"/>
-      </Form.Item>
-      <Form.Item
-        name={['user', 'state']}
-        rules={[
-          {
-            type: 'state',
-          },
-        ]}
-      >
-        <Input placeholder="State"/>
-      </Form.Item>
-      <Form.Item
-        name={['user', 'zipcode']}
-      >
-        <Input placeholder="Zipcode"/>
-      </Form.Item>
-  
-      
-      <Form.Item>
-        <Button type="third" htmlType="submit">
-          Submit
-        </Button>
-        </Form.Item>
-    </Form>
-      </Card> */}
       </Space>
       <ShelterComponent />
     </React.Fragment>

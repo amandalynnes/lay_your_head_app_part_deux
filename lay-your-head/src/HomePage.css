@@ -16,6 +16,13 @@ div.ant-card-head-title {
 
 .ant-statistic-title {
   font-size: 18px;
-  /* font-weight: 200; */
   font-weight: bold; 
+}
+
+div.ant-card-grid.first.ant-card-grid-hoverable{
+  margin-left:20px;
+  margin-top:20px;
+  font-size: 25px;
+  font-weight: 200;
+  color: peachpuff;
 }
