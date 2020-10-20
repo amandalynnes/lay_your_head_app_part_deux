@@ -1,14 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
-import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
+import {  Form, Input,  Statistic  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import Api from "../utils/api";
 import {ShelterComponent} from "../components/ShelterComponent"
-import shelterApi from "../utils/shelterApi";
 import {AuthContext} from "../authContext"
 import SignOut from "./login/SignOut"
-import PostMessages from "../components/PostMessages"
 
 
 // const [messages, setMessages] = useState([])
@@ -24,15 +21,15 @@ import PostMessages from "../components/PostMessages"
 // })
 // }, [])
 
-Api.getMessages()
-.then((querysnapshot) => {
-querysnapshot.forEach((message) => {
-console.log(message.id, message.data())
-})
-})
+// Api.getMessages()
+// .then((querysnapshot) => {
+// querysnapshot.forEach((message) => {
+// console.log(message.id, message.data().text)
+// })
+// })
 
 
-shelterApi()
+
 
 function HomePage() {
   const userInfo = useContext(AuthContext);
@@ -52,7 +49,6 @@ function HomePage() {
       ></PageHeader> */}
 
     <br />
-  <PostMessages/>
   
   <br />
    <PageHeader
