@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, {  useContext } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space} from 'antd';
-import { Descriptions, Form, Input, Image, Statistic, Row, Col  } from 'antd';
+import {  Form, Input  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Api from "../utils/api";
 import {ShelterComponent} from "../components/ShelterComponent"
@@ -69,7 +69,7 @@ setMessages(myMessages)
      title="Because you deserve a place to lay your head"
      extra={[
        SignOut()
-     ]}
+    ]}
    >
    </PageHeader>
 
@@ -119,13 +119,7 @@ setMessages(myMessages)
     </Form>
       </Card>
       </Space>
-      
-  
     <ShelterComponent />
-    
-   
-
-        <Statistic title="Available Beds" value={0} />
     </React.Fragment>
   );
 }
