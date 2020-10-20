@@ -1,4 +1,3 @@
-import axios from "axios";
 import {db} from "../firebase"
 
 class API {
@@ -9,7 +8,9 @@ class API {
         const messagesRef = db.collection("messages").doc(`${shelter}`).collection("chat").get()
         // const result = await messagesRef.data()
         // console.log(result)
+        console.log(messagesRef)
         return messagesRef;
+        // return result
       } catch (err) {
         console.error(err);
         throw err;
