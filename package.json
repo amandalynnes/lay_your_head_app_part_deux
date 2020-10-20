@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/amandalynnes/q2-kapstone-project#readme",
   "dependencies": {
-    "react-firebase-hooks": "^2.2.0"
+    "react-firebase-hooks": "^2.2.0",
+    "start": "^5.1.0"
   }
 }
