@@ -22,11 +22,11 @@ export default function ShelterChat({ shelter }) {
         event.preventDefault()
         const inputValue = event.target.value;
         setState(inputValue)
-        console.log(state.text)
+        // console.log(state.text)
     }
     // TODO: Somehow populate an array and then populate over all of the messages.
     const getMessagesArray = async () => {
-        API.getMessages(`${shelter}`)
+        API.getMessages()
             .then((querysnapshot) => {
                 querysnapshot.forEach((message) => {
                     data.push(message.data().text)
@@ -36,12 +36,13 @@ export default function ShelterChat({ shelter }) {
     useEffect(()=> {    
         getMessagesArray()
     }, [data])
+    // console.log(data)
     
     return (
         <React.Fragment>
-              <Paragraph className="chat">
-                <List messages={data} />
-            </Paragraph>
+              {/* <Paragraph className="chat">
+                <List messages={[data]} />
+            </Paragraph> */}
                 <Form onSubmit={handlePost}>
                 <Form.Control value={state} onChange={handleChange} as="textarea" rows="3" />
                 <Button type="submit">Submit</Button>

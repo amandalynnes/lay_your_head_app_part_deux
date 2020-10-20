@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import '../HomePage.css';
 import { PageHeader, Button, Card, Avatar, Space } from 'antd';
 import { Form, Input } from 'antd';
@@ -9,20 +9,10 @@ import shelterApi from "../utils/shelterApi";
 import { AuthContext } from "../authContext"
 import SignOut from "./login/SignOut"
 import * as firebase from "firebase/app"
+import ShelterChat from "../components/PostMessages"
 
 
-// const [messages, setMessages] = useState([])
-// useEffect(() => {
-//   let myMessages = []
-//   Api.getMessages()
-// .then((querysnapshot) => {
-// querysnapshot.forEach((message) => {
-// console.log(message.id, message.data())
-// myMessages.push(message.data())
-// })
-// setMessages(myMessages)
-// })
-// }, [])
+
 
 // Api.getMessages()
 // .then((querysnapshot) => {
@@ -31,7 +21,7 @@ import * as firebase from "firebase/app"
 // })
 // })
 
-
+// ShelterChat.getMessagesArray()
 
 
 function HomePage() {
@@ -51,8 +41,21 @@ function HomePage() {
       }
     }
   }
-
   )
+
+  const [messages, setMessages] = useState([])
+  useEffect(() => {
+    let myMessages = []
+    Api.getMessages()
+  .then((querysnapshot) => {
+  querysnapshot.forEach((message) => {
+  console.log("message", message.id, message.data())
+  myMessages.push(message.data())
+  })
+  setMessages(myMessages)
+  })
+  }, [])
+
   const updateProfileValues = (ev) => {
     const name = ev.target.name;
     const value = ev.target.value
@@ -71,6 +74,7 @@ function HomePage() {
   if (!userInfo) {
     return <h1>Please Sign In</h1>;
   }
+  console.log(messages)
   return (
     <React.Fragment>
       <br />
@@ -104,10 +108,17 @@ function HomePage() {
               Edit Profile
        </Button></>)}
         </Card>
+        <Card style={{ width: 300 }}>
+          <h1>Messages</h1>
+          <ul>
+          {messages.map((message) => <li> {message.text}</li>)}
+          </ul>
+        </Card>
       <Space />
       <ShelterComponent />
     </React.Fragment>
   );
 }
+ 
 
 export default HomePage;
