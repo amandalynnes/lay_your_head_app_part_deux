@@ -21,7 +21,7 @@ export const ShelterComponent = () => {
     const { status, data, error } = useQuery("shelter", fetchData)
     // const {features} = data
     if (status === "loading") { return <p>Loading </p> }
-    if (error) return <p>some worng</p>
+    if (error) return <p>something went worng</p>
     if (data)
         return (
             <>
@@ -54,9 +54,9 @@ const InfoCard = ({ attributes }) => {
     }
     return (
         <>
-            <LoadScript googleMapsApiKey="AIzaSyB9SYF-7udz1_Ydp8fUce08yWSCJKaF2qQ">
+           
                 <GoogleMap mapContainerStyle={styles} zoom={14} center={position} > <Marker position={position}></Marker></GoogleMap>
-            </LoadScript>
+           
             <Descriptions title="" layout="vertical">
                 <Descriptions.Item label="Name"> {attributes.FACILITY_NAME}</Descriptions.Item>
                 <Descriptions.Item label="Info">Contact</Descriptions.Item>

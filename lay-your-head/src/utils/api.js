@@ -2,10 +2,10 @@ import {db} from "../firebase"
 
 class API {
 
-    async getMessages(shelter) {
+    async getMessages() {
         try {
 
-        const messagesRef = db.collection("messages").doc(`${shelter}`).collection("chat").get()
+        const messagesRef = await db.collection("messages").get()
         // const result = await messagesRef.data()
         // console.log(result)
         console.log(messagesRef)
@@ -19,7 +19,8 @@ class API {
 
      async postMessages(shelter, message) {
       try {
-        let shelterRef = db.collection('messages').doc(`${shelter}`).collection("chat")
+        // let shelterRef = db.collection('messages').doc(`${shelter}`).collection("chat")
+        let shelterRef = await db.collection('messages')
         shelterRef.add({text: message}).then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
         })
